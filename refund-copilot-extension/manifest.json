@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Refund Copilot",
+  "version": "0.1.0",
+  "description": "Highlight a customer message and generate a support reply.",
+
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["<all_urls>"],
+
+  "action": {
+    "default_title": "Refund Copilot",
+    "default_popup": "popup.html"
+  },
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
